@@ -1,0 +1,18 @@
+applications:
+- api_domain: www.mailinator.com
+  application_name: testapp
+  authentication_mode: non-authenticated
+  exclude_paths: []
+  target_url: https://www.mailinator.com/
+  type: web
+deployment:
+  environments:
+  - dev
+plan_items:
+  item-web-app-scanner:
+    deployment:
+      configuration:
+      - testapp
+      tags:
+      - dev
+      trigger: deployment
